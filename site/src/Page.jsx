@@ -1,13 +1,14 @@
 import React from "react";
 import { useSanityContext } from "./SanityContext";
 import { useState, useEffect } from "react";
+import PersonaliaSeksjon from "./Personalia/PersonaliaSeksjon";
 
 const Page = () => {
-  const { client } = useSanityContext();
+  const { client, urlFor } = useSanityContext();
   const [data, setData] = useState([]);
 
   const personaliaData = `
-    *[ _type == "personalia"]{navn, sted}
+    *[ _type == "personalia"]{navn, sted, intro, GitHub, LinkedIn, picture}
     `;
 
   useEffect(() => {
@@ -15,7 +16,7 @@ const Page = () => {
       client
         .fetch(personaliaData)
         .then((data) => {
-          console.log("he", data);
+          console.log("Data from Sanity", data);
           setData(data);
         })
         .catch((error) => {
@@ -30,7 +31,7 @@ const Page = () => {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <PersonaliaSeksjon personalia={data} />
     </div>
   );
 };

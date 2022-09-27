@@ -1,4 +1,3 @@
-import "./App.css";
 import { SanityProvider } from "./SanityContext";
 import Page from "./Page";
 

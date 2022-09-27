@@ -14,20 +14,44 @@ export default {
       type: "string",
     },
     {
+      name: "intro",
       title: "Intro om meg",
-      name: "Intro",
       type: "string",
     },
 
     {
       title: "Link til GitHub",
-      name: "href",
+      name: "GitHub",
       type: "url",
     },
     {
       title: "Link til LinkedIn",
-      name: "href",
+      name: "LinkedIn",
       type: "url",
+    },
+    {
+      title: "Picture",
+      name: "picture",
+      type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
+      fields: [
+        {
+          name: "caption",
+          type: "string",
+          title: "Caption",
+          options: {
+            isHighlighted: true, // <-- make this field easily accessible
+          },
+        },
+        {
+          // Editing this field will be hidden behind an "Edit"-button
+          name: "attribution",
+          type: "string",
+          title: "Attribution",
+        },
+      ],
     },
   ],
   preview: {

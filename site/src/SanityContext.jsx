@@ -1,7 +1,8 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import sanityClient from "@sanity/client";
+import imageUrlBuilder from "@sanity/image-url";
 
-const initialState = { client: {} };
+const initialState = { client: {}, urlFor: () => {} };
 
 const SanityContext = createContext(initialState);
 
@@ -19,8 +20,14 @@ export const SanityProvider = (props) => {
       useCdn: true, // `false` if you want to ensure fresh data
     });
 
-    setState((prevState) => ({ ...prevState, client }));
+    const builder = imageUrlBuilder(client);
+    function urlFor(source) {
+      return builder.image(source);
+    }
+
+    setState((prevState) => ({ ...prevState, client, urlFor }));
   }, []);
+  console.log(state);
   return (
     <SanityContext.Provider value={state}>{children}</SanityContext.Provider>
   );
