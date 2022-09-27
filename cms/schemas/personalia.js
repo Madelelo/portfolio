@@ -13,9 +13,19 @@ export default {
       title: "Sted",
       type: "string",
     },
+    {
+      title: "Intro om meg",
+      name: "Intro",
+      type: "string",
+    },
 
     {
       title: "Link til GitHub",
+      name: "href",
+      type: "url",
+    },
+    {
+      title: "Link til LinkedIn",
       name: "href",
       type: "url",
     },
