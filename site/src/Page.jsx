@@ -1,7 +1,7 @@
 import React from "react";
 import { useSanityContext } from "./SanityContext";
 import { useState, useEffect } from "react";
-import PersonaliaSeksjon from "./Personalia/PersonaliaSeksjon";
+import PersonaliaSeksjon from "./PersonaliaSeksjon";
 import UtdanningSeksjon from "./UtdanningSeksjon";
 
 const Page = () => {
