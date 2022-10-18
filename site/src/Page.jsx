@@ -2,6 +2,7 @@ import React from "react";
 import { useSanityContext } from "./SanityContext";
 import { useState, useEffect } from "react";
 import PersonaliaSeksjon from "./Personalia/PersonaliaSeksjon";
+import UtdanningSeksjon from "./UtdanningSeksjon";
 
 const Page = () => {
   const { client, urlFor } = useSanityContext();
@@ -32,6 +33,8 @@ const Page = () => {
   return (
     <div>
       <PersonaliaSeksjon personalia={data} />
+      <div className="py-20 hidden md:block lg:hidden"></div>
+      <UtdanningSeksjon />
     </div>
   );
 };

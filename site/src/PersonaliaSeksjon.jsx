@@ -1,22 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from "react";
-import { Popover, Transition } from "@headlessui/react";
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  BookmarkSquareIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  CursorArrowRaysIcon,
-  LifebuoyIcon,
-  PhoneIcon,
-  PlayIcon,
-  ShieldCheckIcon,
-  Squares2X2Icon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { useSanityContext } from "../SanityContext";
+import { MapPinIcon } from "@heroicons/react/24/outline";
+import { useSanityContext } from "./SanityContext";
 
 const PersonaliaSeksjon = (props) => {
   const { personalia } = props;
@@ -37,9 +21,10 @@ const PersonaliaSeksjon = (props) => {
             <p className="mx-auto mt-3 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
               {personalia[0].intro}
             </p>
-            <p className="mx-auto mt-3 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
-              {personalia[0].sted}
+            <p className="relative flex mt-3 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl justify-center lg:justify-start">
+              <MapPinIcon className="h-6 w-6" /> {personalia[0].sted}
             </p>
+
             <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
                 <a

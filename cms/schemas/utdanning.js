@@ -22,7 +22,7 @@ export default {
       description: "Startår",
     },
     {
-      name: "Sluttaar",
+      name: "sluttaar",
       title: "Sluttår",
       type: "number",
       description: "Sluttår",
