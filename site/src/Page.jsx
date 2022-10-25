@@ -3,6 +3,7 @@ import { useSanityContext } from "./SanityContext";
 import { useState, useEffect } from "react";
 import PersonaliaSeksjon from "./PersonaliaSeksjon";
 import UtdanningSeksjon from "./UtdanningSeksjon";
+import ErfaringSeksjon from "./ErfaringSeksjon";
 
 const Page = () => {
   const { client, urlFor } = useSanityContext();
@@ -35,6 +36,7 @@ const Page = () => {
       <PersonaliaSeksjon personalia={data} />
       <div className="py-20 hidden md:block lg:hidden"></div>
       <UtdanningSeksjon />
+      <ErfaringSeksjon />
     </div>
   );
 };
